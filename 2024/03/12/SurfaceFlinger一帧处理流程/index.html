@@ -15,14 +15,11 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1 SurfaceFlinger概述Android 屏幕显示的机制通过向 FrameBuffer (缓冲区)写入内容来实现，显示系统依赖于生产者消费者模型，只要往 BufferOueue 中填充数据，则认为是生产者，只要从 BufferOueue 中获取数据，则认为是消费者。无论开发者使用什么染 API，一切内容都会染到 Surface 上。Surface 表示缓冲区队列中的生产方，而缓冲区队列通">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2024/03/12/SurfaceFlinger%E4%B8%80%E5%B8%A7%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B/image-20240312223354159.png">
-<meta property="og:image" content="http://example.com/2024/03/12/SurfaceFlinger%E4%B8%80%E5%B8%A7%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B/image-20240312223411941.png">
 <meta property="article:published_time" content="2024-03-12T10:31:29.000Z">
-<meta property="article:modified_time" content="2024-03-12T15:14:06.588Z">
+<meta property="article:modified_time" content="2024-03-12T16:13:16.449Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="-图形显示系统">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2024/03/12/SurfaceFlinger%E4%B8%80%E5%B8%A7%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B/image-20240312223354159.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -179,10 +176,7 @@
 </li>
 </ul>
 <p>Device 合成是用专门的硬件合成器进行合成 HWComposer，所以硬件合成的能力就取决于硬件的实现。其合成方式是将各个 Laver 的数据全部传给显示硬件，并告知它从不同的缓冲区读取屏幕不同部分的数据。HWComposer 是 Device 合成的抽象。</p>
-<p>Client 合成方式是相对于硬件合成来说的，其合成方式是，将各个 Laver 的内容用 GPU 渲染到FrameBufer (暂存缓冲区)中，最后将 FrameBuffer 传送到显示硬件。这个暂存缓冲区，在HWComposel中称为FBTarget，每个 Display 设备有各自的 FBTarget。Client 合成，之前称为 GLES 合成，也可以称之为 GPU 合成。SurfaceFlinger 合成示意图如图1-1 所示:</p>
-<p><img src="/2024/03/12/SurfaceFlinger%E4%B8%80%E5%B8%A7%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B/image-20240312223354159.png" alt="image-20240312223354159"></p>
-<p>其在Android系统框架中所处位置如图1-2所示：</p>
-<p><img src="/2024/03/12/SurfaceFlinger%E4%B8%80%E5%B8%A7%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B/image-20240312223411941.png" alt="image-20240312223411941"></p>
+<p>Client 合成方式是相对于硬件合成来说的，其合成方式是，将各个 Laver 的内容用 GPU 渲染到FrameBufer (暂存缓冲区)中，最后将 FrameBuffer 传送到显示硬件。这个暂存缓冲区，在HWComposel中称为FBTarget，每个 Display 设备有各自的 FBTarget。Client 合成，之前称为 GLES 合成，也可以称之为 GPU 合成。</p>
 
       
 

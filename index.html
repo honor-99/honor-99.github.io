@@ -173,10 +173,7 @@
 </li>
 </ul>
 <p>Device 合成是用专门的硬件合成器进行合成 HWComposer，所以硬件合成的能力就取决于硬件的实现。其合成方式是将各个 Laver 的数据全部传给显示硬件，并告知它从不同的缓冲区读取屏幕不同部分的数据。HWComposer 是 Device 合成的抽象。</p>
-<p>Client 合成方式是相对于硬件合成来说的，其合成方式是，将各个 Laver 的内容用 GPU 渲染到FrameBufer (暂存缓冲区)中，最后将 FrameBuffer 传送到显示硬件。这个暂存缓冲区，在HWComposel中称为FBTarget，每个 Display 设备有各自的 FBTarget。Client 合成，之前称为 GLES 合成，也可以称之为 GPU 合成。SurfaceFlinger 合成示意图如图1-1 所示:</p>
-<p><img src="/2024/03/12/SurfaceFlinger%E4%B8%80%E5%B8%A7%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B/image-20240312223354159.png" alt="image-20240312223354159"></p>
-<p>其在Android系统框架中所处位置如图1-2所示：</p>
-<p><img src="/2024/03/12/SurfaceFlinger%E4%B8%80%E5%B8%A7%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B/image-20240312223411941.png" alt="image-20240312223411941"></p>
+<p>Client 合成方式是相对于硬件合成来说的，其合成方式是，将各个 Laver 的内容用 GPU 渲染到FrameBufer (暂存缓冲区)中，最后将 FrameBuffer 传送到显示硬件。这个暂存缓冲区，在HWComposel中称为FBTarget，每个 Display 设备有各自的 FBTarget。Client 合成，之前称为 GLES 合成，也可以称之为 GPU 合成。</p>
 
       
 
