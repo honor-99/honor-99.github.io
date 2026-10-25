@@ -51,3 +51,7 @@ footer:
         - '[关于](/about/)'
         - '[RSS 订阅](/atom.xml)'
         - '[GitHub](https://github.com/honor-99)'
+
+features:
+  color_scheme_switch:
+    enabled: true
