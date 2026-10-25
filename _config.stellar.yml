@@ -30,12 +30,6 @@ leftbar:
       icon: default:profile
       url: /about/
 
-  footer:
-    actions:
-      - type: button
-        icon: default:theme
-        title: 切换明暗模式
-        onclick: "var t=document.documentElement.getAttribute('data-theme');setColorScheme(t==='light'?'dark':t==='dark'?'auto':'light')"
 
 article:
   style: tech
@@ -62,3 +56,6 @@ footer:
 features:
   color_scheme_switch:
     enabled: true
+
+inject:
+  body_end: '<script src="/js/theme-toggle.js" defer></script>'
