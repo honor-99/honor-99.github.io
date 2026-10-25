@@ -1,0 +1,53 @@
+# Stellar 主题覆盖配置（其余保持主题默认值）
+# 文档: https://xaoxuu.com/wiki/stellar/
+
+leftbar:
+  brand:
+    ghuser: honor-99
+    tagline: 学无止境
+    image:
+      src: /favicon.svg
+      variant: avatar
+  menu:
+    - id: post
+      title: 博客
+      icon: default:documents
+      url: /
+    - id: archives
+      title: 归档
+      icon: default:calendar
+      url: /archives/
+    - id: categories
+      title: 分类
+      icon: default:category
+      url: /categories/
+    - id: tags
+      title: 标签
+      icon: default:hashtag
+      url: /tags/
+    - id: about
+      title: 关于
+      icon: default:profile
+      url: /about/
+
+article:
+  style: tech
+  show_reading_time: true
+  related_posts_limit: 0
+  category_colors:
+    AI 技术: '#6f42c1'
+    技术笔记: '#0366d6'
+
+footer:
+  sitemap:
+    - title: 博客
+      items:
+        - '[近期发布](/)'
+        - '[分类](/categories/)'
+        - '[标签](/tags/)'
+        - '[归档](/archives/)'
+    - title: 站点
+      items:
+        - '[关于](/about/)'
+        - '[RSS 订阅](/atom.xml)'
+        - '[GitHub](https://github.com/honor-99)'
