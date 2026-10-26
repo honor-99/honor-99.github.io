@@ -6,7 +6,7 @@ leftbar:
     ghuser: honor-99
     tagline: 学无止境
     image:
-      src: /favicon.svg
+      src: https://github.com/honor-99.png?size=240
       variant: avatar
   menu:
     - id: post
