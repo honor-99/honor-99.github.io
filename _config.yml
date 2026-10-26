@@ -10,7 +10,8 @@ keywords: Android,MTK,Camera驱动,AI Agent,微信读书,开源
 author: honor99
 language: zh-CN
 timezone: Asia/Shanghai
-favicon: /favicon.svg
+avatar: /images/github-avatar-512.png
+favicon: /favicon.ico?v=20261026
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'

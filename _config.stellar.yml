@@ -6,7 +6,7 @@ leftbar:
     ghuser: honor-99
     tagline: 学无止境
     image:
-      src: https://github.com/honor-99.png?size=240
+      src: /images/github-avatar-240.png
       variant: avatar
   menu:
     - id: post
@@ -58,4 +58,17 @@ features:
     enabled: true
 
 inject:
+  head_end: |
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20261026">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20261026">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20261026">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20261026">
+    <link rel="manifest" href="/site.webmanifest?v=20261026">
+    <meta name="msapplication-TileColor" content="#f9fafb">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    <meta property="og:image" content="https://208202.xyz/images/social-preview.png?v=20261026">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:image" content="https://208202.xyz/images/social-preview.png?v=20261026">
+    <meta name="twitter:card" content="summary_large_image">
   body_end: '<script src="/js/theme-toggle.js" defer></script>'
