@@ -12,14 +12,14 @@ case "$1" in
     echo "预览地址: http://localhost:4000 (Ctrl+C 退出)"
     npx hexo server
     ;;
-  pub|"")
+  pub)
     MSG="${2:-发布更新 $(date '+%Y-%m-%d %H:%M')}"
     git add -A
     if git diff --cached --quiet; then echo "没有新变更，无需发布"; exit 0; fi
     git commit -m "$MSG"
     git push
     echo ""
-    echo "✅ 已推送，CI 构建中（约 90 秒生效）→ https://208202.xyz"
+    echo "✅ 已推送，CI 构建中 → https://208202.xyz"
     echo "   构建进度: https://github.com/honor-99/honor-99.github.io/actions"
     ;;
   *)

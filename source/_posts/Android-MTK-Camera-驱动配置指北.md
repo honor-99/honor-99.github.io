@@ -204,7 +204,9 @@ Sensor 出厂时烧录了 **AF（自动对焦）位置、AWB（白平衡）参�
 vendor/mediatek/proprietary/custom/<project>/hal/eeprom/
 ├── eeprom_cam_cal_driver.c
 └── eeprom_list.h
-``` ```c
+```
+
+```c
 static EepromInfo_T eeprom_info = {
     .sensor_name = "imx582_mipi_raw",
     .eeprom_type = EEPROM_I2C,
