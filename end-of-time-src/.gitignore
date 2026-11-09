@@ -1,0 +1,8 @@
+# 依赖与构建产物
+node_modules/
+dist/
+
+# 调试
+*.log
+.vite/
+.DS_Store

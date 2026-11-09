@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#08090b" />
+    <meta name="description" content="时间的尽头：一场关于消逝、引力与重生的可交互宇宙之旅。" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>时间的尽头 · THE END OF TIME</title>
+  </head>
+  <body>
+    <canvas id="universe" aria-label="可以拖动旋转、滚轮缩放的三维宇宙" tabindex="0"></canvas>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div id="flash" aria-hidden="true"></div>
+
+    <header class="masthead">
+      <a class="brand" href="#" aria-label="时间的尽头，回到初始视角">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width=".8"/><ellipse cx="20" cy="20" rx="18" ry="5.8" transform="rotate(-40 20 20)" stroke="currentColor" stroke-width=".8"/><circle cx="20" cy="20" r="3" fill="currentColor"/></svg>
+        <span>终 境<span class="brand-sub">BEYOND THE LAST SECOND</span></span>
+      </a>
+      <div class="header-center"><span class="live-dot"></span> 一场关于永恒的交互实验 <span class="header-no">/ NO. 001</span></div>
+      <nav aria-label="作品操作">
+        <button class="icon-button sound-toggle" id="sound" aria-label="开启环境音" aria-pressed="false"><span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="sound-label">声音关闭</span></button>
+        <button class="icon-button" id="about" aria-label="关于作品"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor"/><path d="M12 10v6M12 7v1" stroke="currentColor"/></svg></button>
+        <button class="icon-button" id="fullscreen" aria-label="进入全屏"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4" stroke="currentColor"/></svg></button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="title">
+        <div class="eyebrow"><span class="small-line"></span> THE LAST OBSERVATORY</div>
+        <h1 id="title">时间的<br/><span>尽头</span><i>。</i></h1>
+        <p class="english-title">THE END <em>of</em> TIME</p>
+        <p class="hero-poem" id="poem">当最后一颗恒星熄灭，<br/>宇宙终于学会了安静。</p>
+        <button id="journey" class="journey-button"><span class="button-orbit" aria-hidden="true">✧</span><span>坠入永恒</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor"/></svg></button>
+        <div class="journey-sub">向未知，迈出最后一步</div>
+      </section>
+
+      <aside class="telemetry" aria-label="宇宙观测数据">
+        <div class="telemetry-head"><span class="live-dot"></span> 观测信号</div>
+        <div class="data-block"><span>宇宙年龄 / YEARS</span><strong id="age">10<sup>100</sup></strong></div>
+        <div class="data-block"><span>时空曲率 / CURVATURE</span><strong id="curvature">∞<small>无限</small></strong></div>
+        <div class="data-block temperature"><span>背景温度 / KELVIN</span><strong id="temperature">0.000<small>K</small></strong></div>
+        <div class="signal-graph" aria-hidden="true"><svg viewBox="0 0 138 34"><path d="M0 25h28l5-4 5 7 6-17 5 19 5-11 4 6h20l5-7 5 12 7-26 6 24 5-6 5 3h27"/></svg><span>来自永恒的回声</span></div>
+      </aside>
+
+      <div class="object-label" aria-hidden="true"><span class="object-cross">+</span><span>奇点 Ω<small>SINGULARITY / 00.00.00</small></span><span class="label-rule"></span></div>
+
+      <div class="scene-caption"><span class="caption-index" id="caption-index">02 / 03</span><span id="caption">所有的结束，都是另一种开始。</span></div>
+      <div class="interaction-hint" id="interaction-hint"><svg viewBox="0 0 20 26" fill="none" aria-hidden="true"><rect x="4" y="2" width="12" height="20" rx="6" stroke="currentColor"/><path d="M10 6v5" stroke="currentColor"/></svg><span>拖动探索<span class="hint-dot">·</span>滚轮靠近<span class="hint-dot">·</span>双击唤起引力</span></div>
+    </main>
+
+    <footer class="control-deck">
+      <div class="timeline-section">
+        <span class="control-label">宇宙纪元 <span>/ EPOCH</span></span>
+        <div class="epoch-buttons" role="group" aria-label="选择宇宙纪元">
+          <button data-epoch="0" aria-pressed="false"><span class="epoch-number">01</span><span>最后的恒星</span><span class="epoch-mark"></span></button>
+          <span class="epoch-connector" aria-hidden="true"></span>
+          <button data-epoch="1" class="active" aria-pressed="true"><span class="epoch-number">02</span><span>时间的尽头</span><span class="epoch-mark"></span></button>
+          <span class="epoch-connector" aria-hidden="true"></span>
+          <button data-epoch="2" aria-pressed="false"><span class="epoch-number">03</span><span>另一个黎明</span><span class="epoch-mark"></span></button>
+        </div>
+      </div>
+      <div class="time-controls">
+        <div class="time-heading"><label class="control-label" for="time-rate">时间流速 <span>/ FLOW</span></label><output id="rate-label" for="time-rate">1.0 ×</output></div>
+        <div class="time-row"><button id="pause" class="mini-button" aria-label="冻结时间" aria-pressed="false"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 3h2v10H4zm6 0h2v10h-2z"/></svg></button><span class="range-end">−2</span><input id="time-rate" type="range" min="-2" max="2" step="0.1" value="1" aria-label="时间流速"/><span class="range-end">+2</span></div>
+      </div>
+      <div class="deck-actions"><button id="reset" class="text-button" aria-label="重置视角"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 8a6 6 0 1 1 0 5M4 3v5h5" stroke="currentColor"/></svg><span>重置视角</span></button><button id="capture" class="text-button" aria-label="保存宇宙画面"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 6h3l1-2h6l1 2h3v10H3z" stroke="currentColor"/><circle cx="10" cy="10.5" r="3" stroke="currentColor"/></svg><span>留住此刻</span></button></div>
+    </footer>
+
+    <div class="corner-meta"><span>EST. ∞</span><span>献给所有仰望星空的人</span><span>WEBGL · IMMERSIVE EXPERIENCE</span></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <div id="loading"><div class="loading-orbit"></div><span>正在抵达时间的尽头</span><small>ASSEMBLING THE INFINITE</small></div>
+    <dialog id="about-dialog">
+      <button id="close-about" class="dialog-close" aria-label="关闭作品说明">×</button>
+      <span class="eyebrow">A LETTER FROM THE END</span><h2>如果时间有尽头，<br/>那里会是什么模样？</h2>
+      <p>这是一座虚构的宇宙末日观测站。你是最后一位观测者，在恒星、奇点与新生之间自由穿行。</p>
+      <p>拖动鼠标环绕遗迹，滚轮靠近；双击空间或按 G 释放引力脉冲。切换下方的纪元，见证三种宇宙命运。拖动时间滑块，让星尘冻结或倒流。</p>
+      <div class="keyboard-guide"><span><kbd>空格</kbd> 冻结 / 继续</span><span><kbd>R</kbd> 重置视角</span><span><kbd>H</kbd> 隐藏界面</span><span><kbd>1 – 3</kbd> 切换纪元</span><span><kbd>G</kbd> 引力脉冲</span><span><kbd>F</kbd> 全屏</span></div>
+      <p class="dialog-foot">一切天体、星云与声音均由程序生成。<br/>这是一件艺术作品，观测数据为叙事设定。</p>
+    </dialog>
+    <div id="fallback" hidden><h2>宇宙暂时无法展开</h2><p>请使用支持 WebGL 2 的浏览器，并开启硬件加速。</p><button onclick="location.reload()">重新抵达</button></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
