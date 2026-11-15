@@ -1,0 +1,20 @@
+<!DOCTYPE html><html><head><meta charset="utf8"><title>probe</title></head><body>
+<pre id="out">starting...</pre>
+<script>
+const out = document.getElementById('out');
+function log(m){ out.textContent += '\n' + m; }
+window.addEventListener('error', e => log('window.onerror: ' + e.message + ' @ ' + e.filename + ':' + e.lineno));
+const mk = (src, label) => new Promise(res => {
+  const s = document.createElement('script');
+  s.type = 'module'; s.src = src;
+  const t0 = performance.now();
+  s.onload = () => { log(label + ' LOADED ' + Math.round(performance.now()-t0) + 'ms'); res(); };
+  s.onerror = () => { log(label + ' FAILED ' + Math.round(performance.now()-t0) + 'ms'); res(); };
+  document.head.appendChild(s);
+  setTimeout(() => { log(label + ' TIMEOUT(7s)'); res(); }, 7000);
+});
+fetch('/heart/assets/three.module.min.js').then(r => r.text()).then(t => log('fetch: ' + t.length + ' bytes'));
+mk('/heart/assets/probe.js', 'probe:');
+mk('/heart/assets/three.module.min.js?v=' + Math.random(), 'three:');
+mk('/heart/assets/heart.js?v=' + Math.random(), 'heart:');
+</script></body></html>
