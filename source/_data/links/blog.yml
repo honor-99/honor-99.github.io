@@ -1,3 +1,6 @@
 # 友链数据（配合 {% sites blog %} 标签使用）
 # 字段：title(必填) / url(必填) / description / avatar(或 icon/appicon) / cover(卡片封面)
-[]
+- title: GitHub 热度追踪
+  url: https://trending.208202.xyz/
+  description: GitHub Trending 每期榜单存成不可变快照，派生新上榜 / 持续热门 / 掉榜信号
+  cover: /images/friend-links/github-trending.png
