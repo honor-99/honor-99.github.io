@@ -25,6 +25,10 @@ leftbar:
       title: 标签
       icon: default:hashtag
       url: /tags/
+    - id: links
+      title: 友链
+      icon: default:link
+      url: /links/
     - id: about
       title: 关于
       icon: default:profile
